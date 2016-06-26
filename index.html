@@ -1,0 +1,66 @@
+<html ng-app="datepicker">
+<head>
+	<title>Date time picker</title>
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
+        <script src="lib/bootstrap.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<style type="text/css">
+		.frame {
+			width: 100%;
+			height: 400px; 
+			margin-left: 0%;
+			border: 1px solid #777777; 
+			overflow: auto;
+		}
+
+		.datepicker {
+			width: 100%;
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.datepicker li {
+                        cursor: pointer;
+			border-bottom: 1px solid #ededed;
+			padding: 10px;
+		}
+
+                .datepicker li:hover {
+                    background: #EEE;
+                }
+
+		.text-center {
+			text-align: center;
+		}
+
+		.border {
+			border: 1px solid red;
+		}
+
+
+
+	</style>
+</head>
+<body ng-controller="dateTimePicker">
+<div class="container col-md-3">
+    <div class="col-md-12" style="background-color:ff6600;">
+        <input  type="image"  src="ic_chevron_right_white.png" style="float:right;" ng-click="changeMonth(1);"/>
+        <input  type="image" src="ic_chevron_left_white.png" ng-click="changeMonth(-1);"/>
+        <h3  style="text-align:center;"> {{monthName}} </h3> 
+    </div>
+    <div class="frame col-md-12" ng-if="true" >
+        <ul class="datepicker text-center" ng-if="showType==1">
+	    <li ng-click="selectDate(date)" ng-repeat="date in dateValues">{{date | date:'EEE dd'}}</li> <!-- ng-repeat on this one to show all available dates -->
+		
+	</ul>
+
+	<ul class="datepicker text-center" ng-if="showType==2">
+	    <li ng-click="selectTime(time)" ng-repeat="time in timeValues">{{time}}</li> <!-- ng-repeat on this one to show all available dates --> 
+	</ul>
+    </div>
+</div>
+
+</body>
+</html>
