@@ -1,18 +1,12 @@
 datepicker = angular.module('datepicker', []);
 
 datepicker.controller('dateTimePicker', ['$scope','$http', 'LandingData', '$filter', function($scope, $http, LandingData, $filter){
-	//Select and Send to server
+	
 
         $scope.showType = 1;
         $scope.selected = {};
 
-        //New Add
-        //$scope.changeShowType = function (type) {
-        //$scope.showType = type;
-        //LandingData.pdate.pdate = this.LandingData.pdate.pdate ;
-        //$scope.monthName = $filter('date')(LandingData.pdate.pdate, 'MMM yyyy');
-        //};
-        //END
+        
 
         $scope.selectedTimeIndex = -1;
        
@@ -24,9 +18,9 @@ datepicker.controller('dateTimePicker', ['$scope','$http', 'LandingData', '$filt
        
             $scope.showType = 2;
             
-            //$scope.selected.date = date;
+            
             LandingData.pdate.pdate = date;
-           // $scope.monthName = $filter('date')(date, 'dd MMM , yyyy');
+           
             $scope.selectedMonthName = $filter('date')(date, 'dd MMM yyyy');
             getTimeValues();
             
@@ -37,12 +31,6 @@ datepicker.controller('dateTimePicker', ['$scope','$http', 'LandingData', '$filt
 
         $scope.selectTime = function(time, index) {
             $scope.selectedTimeIndex = index;
-            //LandingData.selected_answer[selected_question.question] = null;
-            //$scope.selected.time = time;
-            //$scope.selected.time = time;
-            //LandingData.dtp.dtp = $scope.selected;
-            //LandingData.ptimep.ptime = time;
-            //$scope.selected=dtp;
 
             //12 hrs to 24hr conversion
              
@@ -85,7 +73,7 @@ datepicker.controller('dateTimePicker', ['$scope','$http', 'LandingData', '$filt
             datewithtime = LandingData.pdate.pdate;
             datewithtime.setHours(h);
             console.log(datewithtime);
-            //LandingData.selected_answer[selected_question.question] = datewithtime;
+            
         };
         
        
@@ -100,15 +88,12 @@ datepicker.controller('dateTimePicker', ['$scope','$http', 'LandingData', '$filt
 
         var bindScope = function() {
                 $scope.timeValues = LandingData.timeValues;
-        }
-
-        //New ADD 
+        } 
 
        $scope.clickMonth = function (){
        $scope.selectedMonthName = $scope.monthName;
        $scope.showType = 1;
        }
-       //END 
 
         bindScope();
         
@@ -199,16 +184,8 @@ datepicker.factory('LandingData', [function(){
                         var n;
                        
                         var nhour = dn.getHours();
-                        //var timevalidate = pdate.pdate; 
-                        //timevalidate.setHours(nhour);
-                        //if (nhour>12)
-                        //n = nhour-12;
-                        //else
                         n = nhour;
-                        //if (dn==timevalidate){
-                        //console.log('Yeah');}
-                        //else {
-                        //console.log('NO');}
+                        
                         if (n==minTime || n>minTime && pdate.pdate-dn<0) {
                         
                         for (var i = n+1; i < maxTime; i++) {
