@@ -20,3 +20,9 @@ Suppose you are selecting time at 4 PM, then 3 PM time slot will not show, you c
 
 It is useful for booking services. 
 
+I created this project when I was working at LocalOye (A hyperlocal based Indian startup https://localoye.com/)
+
+If you are interested to check early stage code of this project which contains lot of errors then you can look at this jsfiddle :- 
+
+Jsfiddle :- jsfiddle.net/abhijitloco/k6jso1u3/
+
